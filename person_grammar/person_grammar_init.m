@@ -40,8 +40,9 @@ catch
   fg_overlap = conf.training.fg_overlap;
 
   [pos, neg, impos] = pascal_data(cls, conf.pascal.year);
-  % Split data by aspect ratio into n groups
-  spos = split(pos, 3);
+  % Split foreground examples into groups by aspect ratio
+  fprintf('Splitting foreground examples by aspect ratio into groups\n');
+  spos = aspect_ratio_split(pos, 3);
   spos = spos{3};
 
   try

@@ -138,7 +138,10 @@ ${PERL} ${AUTORIGHTS}  \
   ./demo.m \
   ./train/pascal_train.m \
   ./train/seed_rand.m \
-  ./train/split.m \
+  ./train/resample_pos.m \
+  ./train/sample_neg.m \
+  ./train/aspect_ratio_split.m \
+  ./train/star_cascade_model.m \
   ./train/trainval.m \
   ./test/pascal_eval.m \
   ./test/pascal_test.m \

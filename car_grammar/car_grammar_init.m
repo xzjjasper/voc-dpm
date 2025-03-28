@@ -401,11 +401,12 @@ cachedir = conf.paths.model_dir;
 seed_rand();
 cls = 'car';
 cachesize = 24000;
-n = 3;
+n = 4;
 
 [pos, neg, impos] = pascal_data(cls, conf.pascal.year);
-% split data by aspect ratio into n groups
-spos = split(pos, n);
+% Split foreground examples into n groups by aspect ratio
+fprintf('Splitting foreground examples by aspect ratio into %d groups\n', n);
+spos = aspect_ratio_split(pos, n);
 side_pos = spos{1};
 angled_pos = spos{2};
 front_pos = spos{3};

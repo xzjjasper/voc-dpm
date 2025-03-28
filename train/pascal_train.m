@@ -41,7 +41,8 @@ cachedir = conf.paths.model_dir;
 [pos, neg, impos] = pascal_data(cls, conf.pascal.year);
 
 % Split foreground examples into n groups by aspect ratio
-spos = split(pos, n);
+fprintf('Splitting foreground examples by aspect ratio into %d groups\n', n);
+spos = aspect_ratio_split(pos, n);
 
 max_num_examples = conf.training.cache_example_limit;
 num_fp           = conf.training.wlssvm_M;

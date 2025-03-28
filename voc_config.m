@@ -33,10 +33,10 @@ function conf = voc_config(varargin)
 % Parent directory that everything (model cache, VOCdevkit) is under
 % I recommend making a symlink to your BASE_DIR named 'cachedir'.
 % e.g., cachedir -> /var/tmp/rbg/
-BASE_DIR    = 'cachedir';
+BASE_DIR    = '~/downloads/voc-dpm-master';
 
 % PASCAL dataset year to use
-PASCAL_YEAR = '2007';
+PASCAL_YEAR = '2012';
 
 % Models are stored in BASE_DIR/PROJECT/PASCAL_YEAR/
 % e.g., /var/tmp/rbg/voc-release5/2007/
@@ -202,8 +202,8 @@ conf = cv(conf, 'training.interval_bg', 4);
 % Evaluation configuration 
 % -------------------------------------------------------------------
 conf = cv(conf, 'eval.interval', 10);
-conf = cv(conf, 'eval.test_set', 'test');
-%conf = cv(conf, 'eval.test_set', 'val');
+% conf = cv(conf, 'eval.test_set', 'test');
+conf = cv(conf, 'eval.test_set', 'val');
 conf = cv(conf, 'eval.max_thresh', -1.1);
 conf.pascal.VOCopts.testset = conf.eval.test_set;
 
